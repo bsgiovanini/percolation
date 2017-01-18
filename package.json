@@ -4,7 +4,7 @@
   "description": "Percolation problem in javascript",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --inline",
+    "start": "webpack-dev-server --host $IP --port $PORT --inline",
     "test": "jest"
   },
   "repository": {

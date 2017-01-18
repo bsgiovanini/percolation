@@ -25,6 +25,8 @@ div {
 	border-width: 1px;
 	border-style: dashed;
 	display: inline-block;
+	-webkit-transition: background-color .1s ease-in-out; /* Safari */
+    transition: background-color .1s ease-in-out;
 }
 
 .grid-node-open {
