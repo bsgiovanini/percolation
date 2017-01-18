@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+}
+
+div {
+	width: 100%;
+	height: 100%;
+}
+
+.percolation-view-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 100px;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+}
+
+.grid-node {
+	background-color: black;
+	border-width: 1px;
+	border-style: dashed;
+	display: inline-block;
+}
+
+.grid-node-open {
+	background-color: green;
+	display: inline-block;
+}

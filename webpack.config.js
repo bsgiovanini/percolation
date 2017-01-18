@@ -1,7 +1,7 @@
 module.exports = {
   entry: ["./app.js"],
   output: {
-    filename: "bundle.js"
+    filename: "build/bundle.js"
   },
   watch: true,
   module: {
@@ -26,5 +26,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js']
+  },
+
+  jshint: {
+        esversion: 6
   }
+
 }
