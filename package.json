@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --host $IP --port $PORT --inline",
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config webpack-production.config.js -p"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "jshint": "^2.9.4",
     "jshint-loader": "^0.8.3",
     "node-libs-browser": "^2.0.0",
+    "strip-loader": "^0.1.2",
     "webpack": "^1.14.0"
   }
 }
