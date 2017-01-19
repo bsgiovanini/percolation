@@ -64,10 +64,8 @@ window.onload = () => {
 
 			if (percolated) {
 
-				const lastSortedRoot = pCWQuickUnion.root(sorted);
-
 				for(let i = 1; i <= n; i++) {
-					if (pCWQuickUnion.root(i) === lastSortedRoot) {
+					if (pCWQuickUnion.isConnected(i, sorted)) {
 						const nodeFull = document.getElementById(i);
 						nodeFull.classList.add("grid-node-full");
 					}
