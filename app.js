@@ -27,7 +27,7 @@ window.onload = () => {
 		
 		const drawContainer = document.querySelector(".percolation-view-container");
 		const dim = parseInt(document.querySelector(".n").value);
-		const freqInput = parseInt(document.querySelector(".n").value);
+		const freqInput = parseInt(document.querySelector(".f").value);
 		freq = (parseInt(freqInput)) ? freqInput: freq;  
 		const dims = 100/dim;
 		const n = dim*dim;
@@ -64,10 +64,8 @@ window.onload = () => {
 
 			if (percolated) {
 
-				const lastSortedRoot = pCWQuickUnion.root(sorted);
-
 				for(let i = 1; i <= n; i++) {
-					if (pCWQuickUnion.root(i) === lastSortedRoot) {
+					if (pCWQuickUnion.isConnected(i, sorted)) {
 						const nodeFull = document.getElementById(i);
 						nodeFull.classList.add("grid-node-full");
 					}
