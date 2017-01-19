@@ -33,7 +33,7 @@ self.onmessage = function(e) {
 	const finalRatio = sumRatios/s;
 	let varRatio = ratios.map((r) => Math.pow(r - finalRatio, 2)).reduce((a, b) => { return a + b}, 0);
 	varRatio = varRatio/(s-1);
-	const stddev = Math.sqrt(varRatio)
+	const stddev = Math.sqrt(varRatio);
 	console.log('Posting message back to main script', finalRatio, stddev);
 	self.postMessage({finalRatio, stddev});
 }
