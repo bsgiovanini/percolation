@@ -17,7 +17,7 @@ module.exports = {
       {
        test: /\.worker\.js$/,
        loader: "worker!babel",
-       presets: ['es2015']
+       presets: ['es2015'],
      }, 
      {
        test: /\.js$/,
@@ -35,6 +35,13 @@ module.exports = {
 
   jshint: {
         esversion: 6
-  }
+  },
+  
+  worker: {
+        output: {
+            filename: "generated/hash.worker.js",
+            chunkFilename: "[id].hash.worker.js"
+        }
+    }
 
 }
