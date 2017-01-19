@@ -27,7 +27,7 @@ window.onload = () => {
 		
 		const drawContainer = document.querySelector(".percolation-view-container");
 		const dim = parseInt(document.querySelector(".n").value);
-		const freqInput = parseInt(document.querySelector(".n").value);
+		const freqInput = parseInt(document.querySelector(".f").value);
 		freq = (parseInt(freqInput)) ? freqInput: freq;  
 		const dims = 100/dim;
 		const n = dim*dim;
