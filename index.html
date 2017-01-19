@@ -9,12 +9,31 @@
 </head>
 <body>
 	<div class="container">
-		<section>
-			<label for="input">Enter N value (N per N)</label>
-			<input type="text" name="input" class="n"></input>
-			<label for="freq">Enter frequency in ms</label>
-			<input type="text" name="freq" class="f"></input>
-			<button class="run">Run</button>
+		<fieldset>
+			<div class="field">
+				<label for="input">Enter N value (N per N)</label>
+				<input type="text" name="input" class="n"></input>
+			</div class="field">
+			<div class="field">
+				<label for="freq">Enter frequency in ms</label>
+				<input type="text" name="freq" class="f"></input>
+			</div class="field">
+			<button class="run">Animate!</button>
+		</fieldset>
+		<fieldset>
+			<div class="field">
+				<label for="input">Enter N value (N per N)</label>
+				<input type="text" name="input" class="n_r"></input>
+			</div class="field">
+			<div class="field">
+				<label for="input">Number of simulations</label>
+				<input type="text" name="input" class="s"></input>
+			</div class="field">
+			<button class="simulate">Simulate!</button>
+		</fieldset>
+		<section class="simulation-result">
+			<p class="result finalRatio"></p>
+			<p class="result stddev"></p>
 		</section>
 		<section class="percolation-view-container">
 			

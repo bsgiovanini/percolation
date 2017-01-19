@@ -73,11 +73,18 @@ test('connection between sites in a recently created array', () => {
 
 })
 
-test('percolates test', () => {
+test('percolates test true', () => {
 	const qf = new PCWQuickUnion(11);
 	qf.connectNeighbors(2);
 	qf.connectNeighbors(5);
 	qf.connectNeighbors(8);
 	expect(qf.percolates()).toBeTruthy();
+})
+
+test('percolates test false', () => {
+	const qf = new PCWQuickUnion(11);
+	qf.connectNeighbors(2);
+	qf.connectNeighbors(5);
+	expect(qf.percolates()).toBeFalsy();
 })
 

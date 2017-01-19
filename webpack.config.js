@@ -14,6 +14,11 @@ module.exports = {
       }
    ],      
     loaders: [
+      {
+       test: /\.worker\.js$/,
+       loader: "worker!babel",
+       presets: ['es2015']
+     }, 
      {
        test: /\.js$/,
        exclude: /node_modules/,

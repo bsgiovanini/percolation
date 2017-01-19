@@ -1,16 +1,23 @@
 import PCWQuickUnion from './components/PCWQuickUnion.js';
-
+import MyWorker from "worker-loader!./worker.js";
+import {getRandomInt} from './components/PMath';
 
 window.onload = () => {
 
+	//var MyWorker = require();
+
+	var worker = new MyWorker();
+	worker.onmessage = (event) => {
+		var {finalRatio, stddev} = event.data;
+		document.querySelector(".finalRatio").innerHTML = `Average: <em>${finalRatio}</em>`;
+		document.querySelector(".stddev").innerHTML = `Standard Deviation: <em>${stddev}</em>`;
+	};
 
 	const run = document.querySelector(".run");
 
-	let freq = 1000;
+	const simulate = document.querySelector(".simulate");
 
-	Math.getRandomInt = (min, max) => {
-	  return Math.floor(Math.random() * (max - min)) + min;
-	}
+	let freq = 1000;
 
 	let interval = null;
 	
@@ -45,7 +52,7 @@ window.onload = () => {
 
 		interval = setInterval(() => {
 			
-			const sorted = Math.getRandomInt(1, n+1);
+			const sorted = getRandomInt(1, n+1);
 			const opened = pCWQuickUnion.connectNeighbors(sorted);
 			const percolates = pCWQuickUnion.percolates();		
 
@@ -55,8 +62,30 @@ window.onload = () => {
 				percolated = percolates;
 			}
 
+			if (percolated) {
+
+				const lastSortedRoot = pCWQuickUnion.root(sorted);
+
+				for(let i = 1; i <= n; i++) {
+					if (pCWQuickUnion.root(i) === lastSortedRoot) {
+						const nodeFull = document.getElementById(i);
+						nodeFull.classList.add("grid-node-full");
+					}
+				}
+
+				clearInterval(interval);
+			}
+
 		}, freq);
 
+		
+
+	});
+
+	simulate.addEventListener("click", (event) => {
+		const dim = parseInt(document.querySelector(".n_r").value);
+		const s = parseInt(document.querySelector(".s").value);
+		worker.postMessage({n: dim*dim,s});
 	});
 };
 

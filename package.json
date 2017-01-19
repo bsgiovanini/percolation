@@ -4,7 +4,7 @@
   "description": "Percolation problem in javascript",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --host $IP --port $PORT --inline",
+    "start": "webpack-dev-server  --inline",
     "test": "jest",
     "build": "webpack --config webpack-production.config.js -p"
   },
@@ -30,5 +30,8 @@
     "node-libs-browser": "^2.0.0",
     "strip-loader": "^0.1.2",
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "worker-loader": "^0.7.1"
   }
 }
