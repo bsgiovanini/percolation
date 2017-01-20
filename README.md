@@ -1,6 +1,9 @@
 # percolation
 Percolation problem in JavaScript
 
+Demo:
+- https://bsgiovanini.github.io/percolation/
+
 Problem Description: 
 - http://coursera.cs.princeton.edu/algs4/assignments/percolation.html
 
