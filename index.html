@@ -8,25 +8,32 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="container">
+	<section class="container">
+		<header>
+			<h3>Percolation Problem Demo</h3>
+			<p>
+			Developed in ECMAScript 6 using the Path Compress Weighted Quick Union Algorithm as part of the Algorithms Princeton University on <a target="_blank" href="https://www.coursera.org/learn/algorithms-part1">Coursera</a>. More information and code source in <a target="_blank" href="https://github.com/bsgiovanini/percolation">github</a>
+			</p>
+
+		</header>
 		<fieldset>
 			<div class="field">
-				<label for="input">Enter N value (N per N)</label>
+				<label for="input">N value (N x N)</label>
 				<input type="text" name="input" class="n"></input>
 			</div class="field">
 			<div class="field">
-				<label for="freq">Enter frequency in ms</label>
+				<label for="freq">Frequency in ms</label>
 				<input type="text" name="freq" class="f"></input>
 			</div class="field">
 			<button class="run">Animate!</button>
 		</fieldset>
 		<fieldset>
 			<div class="field">
-				<label for="input">Enter N value (N per N)</label>
+				<label for="input">N value (N x N)</label>
 				<input type="text" name="input" class="n_r"></input>
 			</div class="field">
 			<div class="field">
-				<label for="input">Number of simulations</label>
+				<label for="input"># of simulations</label>
 				<input type="text" name="input" class="s"></input>
 			</div class="field">
 			<button class="simulate">Simulate!</button>
@@ -38,6 +45,6 @@
 		<section class="percolation-view-container">
 			
 		</section>
-	</div>
+	</section>
 </body>
 </html>

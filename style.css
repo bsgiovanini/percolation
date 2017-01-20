@@ -4,11 +4,19 @@
 
 body {
 	margin: 0px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
 }
 
 div {
 	width: 100%;
 	height: 100%;
+}
+
+.container header {
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .percolation-view-container {
@@ -27,11 +35,22 @@ div {
 	width: 40%;
 }
 
+input {
+	width: 80px;
+}
+
+fieldset {
+  padding: 1em;
+  border-style: none;
+  border-bottom: dotted #000000;
+}
+
 .result {
 	text-align: center;
 }
 
 .simulation-result {
+	font-weight: bold;
 	height: 50px;
 }
 

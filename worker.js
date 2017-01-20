@@ -36,4 +36,4 @@ self.onmessage = function(e) {
 	const stddev = Math.sqrt(varRatio);
 	console.log('Posting message back to main script', finalRatio, stddev);
 	self.postMessage({finalRatio, stddev});
-}
+};
