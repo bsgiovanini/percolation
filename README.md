@@ -17,7 +17,7 @@ Stack:
 
 - ECMAScript 6
 - HTML5 
-- CSS3 (Styling and animation)
+- CSS3 (Styling, responsiveness and animation)
 - WebWorker (Simulation)
 - Jest (Unit Testing)
 - WebPack (Building)

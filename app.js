@@ -21,7 +21,9 @@ window.onload = () => {
 
 	let interval = null;
 	
-	run.addEventListener("click", (event) => {
+	run.addEventListener("submit", (event) => {
+
+		event.preventDefault();
 
 		if(interval) clearInterval(interval);
 		
@@ -82,7 +84,10 @@ window.onload = () => {
 
 	});
 
-	simulate.addEventListener("click", (event) => {
+	simulate.addEventListener("submit", (event) => {
+
+		event.preventDefault();
+		
 		const dim = parseInt(document.querySelector(".n_r").value);
 		const s = parseInt(document.querySelector(".s").value);
 		worker.postMessage({n: dim*dim,s});
