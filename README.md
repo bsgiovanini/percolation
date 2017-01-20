@@ -13,9 +13,11 @@ Algorithm:
 Stack:
 
 - ECMAScript 6
-- HTML5
-- CSS3
-- WebWorker
+- HTML5 
+- CSS3 (Styling and animation)
+- WebWorker (Simulation)
+- Jest (Unit Testing)
+- WebPack (Building)
 
 More JavaScript algorithms:
 - https://github.com/bsgiovanini/js-algorithms
