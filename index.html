@@ -8,29 +8,40 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="container">
-		<fieldset>
-			<div class="field">
-				<label for="input">Enter N value (N per N)</label>
-				<input type="text" name="input" class="n"></input>
-			</div class="field">
-			<div class="field">
-				<label for="freq">Enter frequency in ms</label>
-				<input type="text" name="freq" class="f"></input>
-			</div class="field">
-			<button class="run">Animate!</button>
-		</fieldset>
-		<fieldset>
-			<div class="field">
-				<label for="input">Enter N value (N per N)</label>
-				<input type="text" name="input" class="n_r"></input>
-			</div class="field">
-			<div class="field">
-				<label for="input">Number of simulations</label>
-				<input type="text" name="input" class="s"></input>
-			</div class="field">
-			<button class="simulate">Simulate!</button>
-		</fieldset>
+	<section class="container">
+		<header>
+			<h3>Percolation Problem Demo</h3>
+			<p>
+			Developed in ECMAScript 6 using the Path Compress Weighted Quick Union Algorithm as assignment of the Algorithms Course from Princeton University at <a target="_blank" href="https://www.coursera.org/learn/algorithms-part1">Coursera</a>. More information and source code in <a target="_blank" href="https://github.com/bsgiovanini/percolation">github</a>.
+			</p>
+
+		</header>
+		<form class="run">
+			<fieldset>
+				<div class="field">
+					<label for="input">Dimension:</label>
+					<input type="number" min="1" max="100" name="input" class="n" required></input>
+				</div class="field">
+				<div class="field">
+					<label for="freq">Frequency (ms):</label>
+					<input type="number" min="5" name="freq" class="f" required></input>
+				</div class="field">
+				<input type="submit" value="Animate!"></button>
+			</fieldset>
+		</form>
+		<form class="simulate">
+			<fieldset>
+				<div class="field">
+					<label for="input">Dimension:</label>
+					<input type="number" min="1" max="100" name="input" class="n_r" required></input>
+				</div class="field">
+				<div class="field">
+					<label for="input"># simulations:</label>
+					<input type="number" min="1" name="input" class="s" required></input>
+				</div class="field">
+				<input type="submit" value="Simulate!"></input>
+			</fieldset>
+		</form>
 		<section class="simulation-result">
 			<p class="result finalRatio"></p>
 			<p class="result stddev"></p>
@@ -38,6 +49,9 @@
 		<section class="percolation-view-container">
 			
 		</section>
-	</div>
+		<footer>
+			Developed by <a target="_blank" href="http://www.brunogiovanini.com">Bruno Giovanini</a>.
+		</footer>
+	</section>
 </body>
 </html>

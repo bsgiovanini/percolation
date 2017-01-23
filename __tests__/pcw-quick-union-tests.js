@@ -88,3 +88,12 @@ test('percolates test false', () => {
 	expect(qf.percolates()).toBeFalsy();
 })
 
+test('should return 1 after unions (3,1) and (5,3) when finding 5', () => {
+	const qf = new PCWQuickUnion(11, false);
+	qf.connectNeighbors(2);
+	qf.connectNeighbors(5);
+	qf.connectNeighbors(8);
+	expect(qf.isConnected(2, 8)).toBeTruthy();
+	expect(qf.percolates()).toBeFalsy();
+})
+

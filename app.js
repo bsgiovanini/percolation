@@ -21,7 +21,9 @@ window.onload = () => {
 
 	let interval = null;
 	
-	run.addEventListener("click", (event) => {
+	run.addEventListener("submit", (event) => {
+
+		event.preventDefault();
 
 		if(interval) clearInterval(interval);
 		
@@ -47,6 +49,7 @@ window.onload = () => {
 		}
 
 		const pCWQuickUnion = new PCWQuickUnion(n+2);
+		const pCWQuickUnionBS = new PCWQuickUnion(n+2, false);
 
 		let percolated = false;
 
@@ -54,6 +57,7 @@ window.onload = () => {
 			
 			const sorted = getRandomInt(1, n+1);
 			const opened = pCWQuickUnion.connectNeighbors(sorted);
+			pCWQuickUnionBS.connectNeighbors(sorted);
 			const percolates = pCWQuickUnion.percolates();		
 
 			if(opened && !percolated) {
@@ -65,7 +69,7 @@ window.onload = () => {
 			if (percolated) {
 
 				for(let i = 1; i <= n; i++) {
-					if (pCWQuickUnion.isConnected(i, sorted)) {
+					if (pCWQuickUnionBS.isConnected(i, sorted)) {
 						const nodeFull = document.getElementById(i);
 						nodeFull.classList.add("grid-node-full");
 					}
@@ -80,7 +84,10 @@ window.onload = () => {
 
 	});
 
-	simulate.addEventListener("click", (event) => {
+	simulate.addEventListener("submit", (event) => {
+
+		event.preventDefault();
+		
 		const dim = parseInt(document.querySelector(".n_r").value);
 		const s = parseInt(document.querySelector(".s").value);
 		worker.postMessage({n: dim*dim,s});

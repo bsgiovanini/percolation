@@ -1,6 +1,7 @@
 export default class PCWQuickUnion {
     
-    constructor(n) {
+    constructor(n, bw = true) {
+        this.bw = bw;
         this.dim = Math.sqrt(n-2);
         this.nodeZeroId = n-1;
         this.nodeEndId = n;
@@ -12,8 +13,10 @@ export default class PCWQuickUnion {
             this.id[i] = i;
             this.open[i] = false;
         }
-        this.open[this.nodeZeroId] = true;
-        this.open[this.nodeEndId] = true;
+
+        this.open[this.nodeZeroId] = bw;
+        this.open[this.nodeEndId] = bw;
+        
         this.counter = n;
     }
     //Find component name
@@ -103,7 +106,6 @@ export default class PCWQuickUnion {
     isConnected(p, q) {
         return this.root(p) === this.root(q);
     }
-
 
 }
 
